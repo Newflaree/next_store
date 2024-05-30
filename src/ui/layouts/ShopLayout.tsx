@@ -7,6 +7,13 @@ import {
 } from 'react';
 // Next
 import Head from 'next/head';
+// Components
+import {
+  Footer,
+  LoadingPage,
+  Navbar,
+  Sidebar
+} from '../components';
 
 
 interface Props {
@@ -57,10 +64,10 @@ export const ShopLayout = ({
       </Head>
 
       <nav>
-        {/*Navbar*/}
+        <Navbar />
       </nav>
 
-      {/*Sidebar*/}
+      <Sidebar />
 
       <main
        className=''
@@ -74,11 +81,12 @@ export const ShopLayout = ({
       >
         {
           ( isLoading )
-            ? <>{/*LoadingPage*/}</>
+            ? <LoadingPage />
             : <Fragment>{ children }</Fragment>
-
         }
       </main>
+
+      <Footer />
     </Fragment>
   );
 }
