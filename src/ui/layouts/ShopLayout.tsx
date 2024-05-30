@@ -11,6 +11,7 @@ import {
   Footer,
   LoadingPage,
   Navbar,
+  ParticlesBG,
   Sidebar
 } from '../components';
 
@@ -67,6 +68,8 @@ export const ShopLayout = ({
         <nav>
           <Navbar />
         </nav>
+
+        <ParticlesBG />
 
         <Sidebar />
 
