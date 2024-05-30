@@ -1,7 +1,6 @@
 // React
 import {
   Fragment,
-  ReactNode,
   useEffect,
   useState
 } from 'react';
@@ -17,7 +16,7 @@ import {
 
 
 interface Props {
-  children: ReactNode;
+  children: React.ReactNode;
 
   pageTitle: string;
   pageDesc?: string;
@@ -63,30 +62,26 @@ export const ShopLayout = ({
         <meta property="og:url" content={ pageUrl } />
       </Head>
 
-      <nav>
-        <Navbar />
-      </nav>
 
-      <Sidebar />
+      <div className='min-h-screen'>
+        <nav>
+          <Navbar />
+        </nav>
 
-      <main
-       className=''
-        style={{
-          margin: 'auto',
-          marginTop: '35px',
-          maxWidth: '1080px',
-          padding: '8px',
-          marginBottom: '40px'
-        }}
-      >
-        {
-          ( isLoading )
-            ? <LoadingPage />
-            : <Fragment>{ children }</Fragment>
-        }
-      </main>
+        <Sidebar />
 
-      <Footer />
+        <main
+          className='px-0 sm:px-10 sm:w-[1080px] m-auto'
+        >
+          {
+            ( isLoading )
+              ? <LoadingPage />
+              : <Fragment>{ children }</Fragment>
+          }
+        </main>
+
+        <Footer />
+      </div>
     </Fragment>
   );
 }
