@@ -1,6 +1,11 @@
 // Next
 import NextLink from 'next/link';
 import Image from 'next/image';
+// React Icons
+import {
+  IoCartOutline,
+  IoSearchOutline
+} from 'react-icons/io5';
 
 
 export const Navbar = () => {
@@ -73,11 +78,9 @@ export const Navbar = () => {
           href='/search'
           className='mx-2'
         >
-          {/*
           <IoSearchOutline
             className='w-5 h-5'
           />
-            */}
         </NextLink>
 
         <NextLink
@@ -101,11 +104,9 @@ export const Navbar = () => {
               3
             </span>
 
-            {/*
             <IoCartOutline
               className='w-5 h-5'
             />
-              */}
           </div>
         </NextLink>
 
